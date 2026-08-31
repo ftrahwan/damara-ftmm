@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #5B3A1E;
+  --color-brand-secondary: #B07A3C;
+  --color-brand-accent: #D9B26A;
+  --color-brand-yellow: #F4C542;
+  --color-brand-surface: #FAFAFA;
+
+  --color-prodi-nano: #EF4444;
+  --color-prodi-sainsdata: #A855F7;
+  --color-prodi-industri: #2563EB;
+  --color-prodi-elektro: #F4C542;
+  --color-prodi-robotika: #9CA3AF;
+
+  --font-heading: var(--font-montserrat), system-ui, -apple-system, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --background: #5B3A1E;
+  --foreground: #FAFAFA;
+  --brand-primary: #5B3A1E;
+  --brand-secondary: #B07A3C;
+  --brand-accent: #D9B26A;
+  --brand-yellow: #F4C542;
+  --brand-surface: #FAFAFA;
+}
+
+/* Base Body with Diagonal Gradient (5B3A1E to B07A3C) and Dot Grid Pattern */
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #FAFAFA;
+  background: linear-gradient(135deg, #5B3A1E 0%, #8C5A2B 50%, #B07A3C 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle dot-matrix overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(250, 250, 250, 0.08) 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glassmorphism Components & Utility Classes */
+.glass-container {
+  background: rgba(91, 58, 30, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(250, 250, 250, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+}
+
+.glass-card {
+  background: linear-gradient(145deg, rgba(65, 38, 17, 0.72) 0%, rgba(45, 25, 10, 0.85) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(217, 178, 106, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(217, 178, 106, 0.45);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35), 0 0 20px rgba(217, 178, 106, 0.12);
+}
+
+.glass-input {
+  background: rgba(45, 25, 10, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(217, 178, 106, 0.28);
+  color: #FAFAFA;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: #D9B26A;
+  background: rgba(45, 25, 10, 0.75);
+  box-shadow: 0 0 0 3px rgba(217, 178, 106, 0.25), inset 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.glass-pill {
+  background: rgba(65, 38, 17, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(217, 178, 106, 0.22);
+  color: rgba(250, 250, 250, 0.85);
+  transition: all 0.2s ease;
+}
+
+.glass-pill:hover {
+  background: rgba(176, 122, 60, 0.4);
+  border-color: rgba(217, 178, 106, 0.5);
+  color: #FAFAFA;
+}
+
+.glass-pill-active {
+  background: linear-gradient(135deg, #B07A3C 0%, #8C5A2B 100%);
+  border-color: #D9B26A;
+  color: #FAFAFA;
+  box-shadow: 0 4px 12px rgba(91, 58, 30, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glass-btn-primary {
+  background: linear-gradient(135deg, #B07A3C 0%, #8C5A2B 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(217, 178, 106, 0.4);
+  color: #FAFAFA;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.glass-btn-primary:hover {
+  background: linear-gradient(135deg, #C28B47 0%, #9B6430 100%);
+  border-color: #D9B26A;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3), 0 0 12px rgba(217, 178, 106, 0.2);
+  transform: translateY(-1px);
+}
+
+.glass-btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* DAMARA Logo Typography (Matching Official Identity without shadow) */
+.damara-gold-logo {
+  font-family: var(--font-montserrat), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF7 18%, #F8E5C4 38%, #E6BC7A 60%, #CF9445 82%, #B37528 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 8px #462912;
+  paint-order: stroke fill;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+/* Transparent & Sleek Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(217, 178, 106, 0.25) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(217, 178, 106, 0.25);
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(217, 178, 106, 0.5);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

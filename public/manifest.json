@@ -1,0 +1,17 @@
+{
+  "name": "DAMARA — Daya Magang Industri Mandala",
+  "short_name": "DAMARA FTMM",
+  "description": "Platform agregator lowongan magang terkurasi khusus mahasiswa FTMM Universitas Airlangga.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#5B3A1E",
+  "theme_color": "#B07A3C",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
