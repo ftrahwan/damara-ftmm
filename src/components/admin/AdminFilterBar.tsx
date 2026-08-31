@@ -52,9 +52,18 @@ export function AdminFilterBar({
       }
     }
 
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setIsStatusOpen(false);
+        setIsProdiOpen(false);
+      }
+    }
+
     document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
 
@@ -68,12 +77,12 @@ export function AdminFilterBar({
 
   return (
     <div className="w-full max-w-2xl mx-auto space-y-3">
-      {/* 1. Top Search Bar */}
+      {/* 1. Top Search Bar (Capsule Pill Style) */}
       <div className="relative w-full">
-        <div className="relative flex items-center bg-[#9E6935]/90 hover:bg-[#A8723C] focus-within:bg-[#A8723C] rounded-2xl sm:rounded-3xl border border-[#D9B26A]/30 shadow-md transition-all">
+        <div className="relative flex items-center h-12 bg-[#9E6935] hover:bg-[#A8723C] focus-within:bg-[#A8723C] rounded-full border border-[#D9B26A]/25 shadow-md transition-all">
           {/* Search Icon */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-[#E6C687]">
-            <Search className="h-4 w-4" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-5 text-[#DEBE7E]">
+            <Search className="h-5 w-5" />
           </div>
 
           {/* Search Input */}
@@ -82,7 +91,7 @@ export function AdminFilterBar({
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Temukan Lowongan"
-            className="w-full bg-transparent py-3 pl-11 pr-10 text-sm font-medium text-[#FAFAFA] placeholder:text-[#E0BE7B]/80 focus:outline-none"
+            className="w-full bg-transparent py-3 pl-12 pr-10 text-sm font-semibold text-[#FAFAFA] placeholder:text-[#DEBE7E] focus:outline-none"
           />
 
           {/* Clear Button */}
@@ -91,7 +100,7 @@ export function AdminFilterBar({
               type="button"
               onClick={() => onSearchChange('')}
               aria-label="Hapus pencarian"
-              className="absolute inset-y-0 right-0 flex items-center pr-3.5 text-[#E6C687]/80 hover:text-white transition-colors cursor-pointer"
+              className="absolute inset-y-0 right-0 flex items-center pr-4 text-[#DEBE7E] hover:text-white transition-colors cursor-pointer"
             >
               <X className="h-4 w-4" />
             </button>
@@ -99,7 +108,7 @@ export function AdminFilterBar({
         </div>
       </div>
 
-      {/* 2. Bottom Row: 2 Dropdown Pills */}
+      {/* 2. Bottom Row: 2 Dropdown Pills side by side */}
       <div className="grid grid-cols-2 gap-3 sm:gap-4">
         {/* Status Filter Dropdown */}
         <div className="relative" ref={statusRef}>
@@ -109,17 +118,17 @@ export function AdminFilterBar({
               setIsStatusOpen((prev) => !prev);
               setIsProdiOpen(false);
             }}
-            className="w-full flex items-center justify-between px-4 sm:px-5 py-2.5 bg-[#9E6935]/90 hover:bg-[#A8723C] rounded-2xl sm:rounded-3xl border border-[#D9B26A]/30 shadow-md text-xs sm:text-sm font-semibold text-[#E6C687] hover:text-white transition-all cursor-pointer"
+            className="w-full h-12 flex items-center justify-between px-5 bg-[#9E6935] hover:bg-[#A8723C] rounded-full border border-[#D9B26A]/25 shadow-md text-sm font-bold text-[#DEBE7E] hover:text-[#FAFAFA] transition-all cursor-pointer"
           >
             <span className="truncate">{currentStatusLabel}</span>
             <ChevronDown
-              className={`w-4 h-4 shrink-0 text-[#E6C687] transition-transform duration-200 ${
+              className={`w-4 h-4 shrink-0 text-[#DEBE7E] transition-transform duration-200 ${
                 isStatusOpen ? 'rotate-180' : ''
               }`}
             />
           </button>
 
-          {/* Dropdown Menu */}
+          {/* Status Dropdown Menu */}
           {isStatusOpen && (
             <div className="absolute left-0 right-0 top-full mt-2 z-50 rounded-2xl glass-card border border-[#D9B26A]/40 p-1.5 shadow-2xl animate-in fade-in zoom-in-95 duration-150">
               <div className="space-y-1">
@@ -157,19 +166,19 @@ export function AdminFilterBar({
               setIsProdiOpen((prev) => !prev);
               setIsStatusOpen(false);
             }}
-            className="w-full flex items-center justify-between px-4 sm:px-5 py-2.5 bg-[#9E6935]/90 hover:bg-[#A8723C] rounded-2xl sm:rounded-3xl border border-[#D9B26A]/30 shadow-md text-xs sm:text-sm font-semibold text-[#E6C687] hover:text-white transition-all cursor-pointer"
+            className="w-full h-12 flex items-center justify-between px-5 bg-[#9E6935] hover:bg-[#A8723C] rounded-full border border-[#D9B26A]/25 shadow-md text-sm font-bold text-[#DEBE7E] hover:text-[#FAFAFA] transition-all cursor-pointer"
           >
             <span className="truncate">{currentProdiLabel}</span>
             <ChevronDown
-              className={`w-4 h-4 shrink-0 text-[#E6C687] transition-transform duration-200 ${
+              className={`w-4 h-4 shrink-0 text-[#DEBE7E] transition-transform duration-200 ${
                 isProdiOpen ? 'rotate-180' : ''
               }`}
             />
           </button>
 
-          {/* Dropdown Menu */}
+          {/* Prodi Dropdown Menu */}
           {isProdiOpen && (
-            <div className="absolute left-0 right-0 sm:right-auto sm:w-64 top-full mt-2 z-50 rounded-2xl glass-card border border-[#D9B26A]/40 p-1.5 shadow-2xl animate-in fade-in zoom-in-95 duration-150 max-h-60 overflow-y-auto">
+            <div className="absolute left-0 right-0 top-full mt-2 z-50 rounded-2xl glass-card border border-[#D9B26A]/40 p-1.5 shadow-2xl animate-in fade-in zoom-in-95 duration-150 max-h-60 overflow-y-auto">
               <div className="space-y-1">
                 {/* Option Semua */}
                 <button
@@ -184,7 +193,7 @@ export function AdminFilterBar({
                       : 'text-stone-300 hover:bg-white/10 hover:text-white'
                   }`}
                 >
-                  <span>Semua Program Studi</span>
+                  <span>Semua</span>
                   {(!selectedProdi || selectedProdi === 'all' || selectedProdi === 'Semua') && (
                     <Check className="w-3.5 h-3.5 text-[#D9B26A]" />
                   )}

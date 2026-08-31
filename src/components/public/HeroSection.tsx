@@ -22,7 +22,7 @@ export function HeroSection({
         <div className="flex items-center justify-end gap-2 max-w-4xl mx-auto px-4 mb-3 animate-in fade-in duration-200">
           <Link
             href="/admin"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass-pill text-xs font-semibold hover:text-[#D9B26A] transition-all"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-pill text-xs font-semibold hover:text-[#D9B26A] transition-all hover:scale-105"
             title="Buka Dashboard Admin"
           >
             <LayoutDashboard className="w-3.5 h-3.5 text-[#D9B26A]" />
@@ -31,7 +31,7 @@ export function HeroSection({
           <button
             type="button"
             onClick={onLogout}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass-btn-primary text-xs font-semibold shadow-md cursor-pointer transition-all"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full glass-btn-primary text-xs font-semibold shadow-md cursor-pointer transition-all hover:scale-105"
             title="Keluar dari sesi admin"
           >
             <LogOut className="w-3.5 h-3.5" />
@@ -48,8 +48,17 @@ export function HeroSection({
 
       {/* Subtitle / Welcome Text */}
       <p className="mt-3 text-xs sm:text-sm md:text-base text-stone-200/90 max-w-md sm:max-w-xl mx-auto px-6 leading-relaxed font-normal">
-        Selamat datang KM-FTMM di platform magang BEM FTMM.
-        <br className="hidden sm:inline" /> Temukan lowongan impianmu bersama kami
+        {isAdmin ? (
+          <>
+            Panel Pengelolaan Lowongan Magang BEM FTMM UNAIR.
+            <br className="hidden sm:inline" /> Kelola dan publikasikan informasi lowongan magang untuk KM-FTMM.
+          </>
+        ) : (
+          <>
+            Selamat datang KM-FTMM di platform magang BEM FTMM.
+            <br className="hidden sm:inline" /> Temukan lowongan impianmu bersama kami
+          </>
+        )}
       </p>
     </section>
   );

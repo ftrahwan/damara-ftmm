@@ -54,7 +54,7 @@ export function DeleteModal({
             type="button"
             onClick={onClose}
             disabled={isDeleting}
-            className="rounded-2xl border border-white/20 bg-black/20 px-4 py-2 text-xs font-semibold text-stone-300 hover:bg-white/10 hover:text-white transition-colors cursor-pointer disabled:opacity-50"
+            className="rounded-full border border-white/20 bg-black/20 px-5 py-2 text-xs font-semibold text-stone-300 hover:bg-white/10 hover:text-white transition-colors cursor-pointer disabled:opacity-50"
           >
             Batal
           </button>
@@ -62,7 +62,7 @@ export function DeleteModal({
             type="button"
             onClick={onConfirm}
             disabled={isDeleting}
-            className="rounded-2xl bg-rose-600 hover:bg-rose-700 px-5 py-2 text-xs font-bold text-white shadow-lg transition-all cursor-pointer disabled:opacity-50 active:scale-95"
+            className="rounded-full bg-rose-600 hover:bg-rose-700 px-5 py-2 text-xs font-bold text-white shadow-lg transition-all cursor-pointer disabled:opacity-50 active:scale-95 hover:scale-105"
           >
             {isDeleting ? 'Menghapus...' : 'Ya, Hapus Lowongan'}
           </button>

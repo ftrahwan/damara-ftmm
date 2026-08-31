@@ -62,7 +62,7 @@ export function AdminNavbar({ userEmail }: AdminNavbarProps) {
           <Link
             href="/admin/jobs/new"
             id="btn-add-job-nav"
-            className="hidden items-center gap-1.5 rounded-2xl glass-btn-primary px-3.5 py-2 text-xs font-bold text-white shadow-md active:scale-95 sm:inline-flex cursor-pointer"
+            className="hidden items-center gap-1.5 rounded-full glass-btn-primary px-4 py-2 text-xs font-bold text-white shadow-md active:scale-95 hover:scale-105 sm:inline-flex cursor-pointer transition-all"
           >
             <Plus className="h-4 w-4" />
             <span>Tambah Lowongan</span>
@@ -71,7 +71,7 @@ export function AdminNavbar({ userEmail }: AdminNavbarProps) {
           <Link
             href="/"
             aria-label="Kembali ke portal mahasiswa publik"
-            className="inline-flex items-center gap-1.5 rounded-2xl border border-white/20 bg-black/20 px-3 py-1.5 text-xs font-semibold text-stone-200 hover:bg-white/10 hover:text-white transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/20 px-4 py-1.5 text-xs font-semibold text-stone-200 hover:bg-white/10 hover:text-white transition-colors cursor-pointer"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             <span className="hidden sm:inline">Halaman Publik</span>
@@ -89,7 +89,7 @@ export function AdminNavbar({ userEmail }: AdminNavbarProps) {
             onClick={handleLogout}
             id="btn-admin-logout"
             aria-label="Keluar dari sesi admin"
-            className="inline-flex items-center gap-1.5 rounded-2xl border border-rose-500/40 bg-rose-950/60 px-3 py-1.5 text-xs font-bold text-rose-200 hover:bg-rose-900/60 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 rounded-full border border-rose-500/40 bg-rose-950/60 px-4 py-1.5 text-xs font-bold text-rose-200 hover:bg-rose-900/60 transition-colors cursor-pointer hover:scale-105"
           >
             <LogOut className="h-3.5 w-3.5" />
             <span>Logout</span>

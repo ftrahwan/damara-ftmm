@@ -6,6 +6,7 @@ import { useSearchParams, usePathname } from 'next/navigation';
 import { HeroSection } from '@/components/public/HeroSection';
 import { SearchBar } from '@/components/public/SearchBar';
 import { ProgramFilter } from '@/components/public/ProgramFilter';
+import { AdminFilterBar, StatusFilterOption } from '@/components/admin/AdminFilterBar';
 import { JobCard } from '@/components/public/JobCard';
 import { JobCardSkeleton } from '@/components/public/JobCardSkeleton';
 import { EmptyState } from '@/components/public/EmptyState';
@@ -36,12 +37,14 @@ function DamaraApp() {
   // URL search params sync
   const initialSearch = searchParams.get('q') || '';
   const initialProdi = searchParams.get('prodi') || 'all';
+  const initialStatus = (searchParams.get('status') as StatusFilterOption) || 'all';
 
   const [vacancies, setVacancies] = useState<Vacancy[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [searchQuery, setSearchQuery] = useState(initialSearch);
   const [selectedProdi, setSelectedProdi] = useState(initialProdi);
+  const [selectedStatus, setSelectedStatus] = useState<StatusFilterOption>(initialStatus);
 
   // Student bookmarks state
   const [bookmarkedIds, setBookmarkedIds] = useState<string[]>(() => {
@@ -90,10 +93,13 @@ function DamaraApp() {
     if (selectedProdi && selectedProdi !== 'all') {
       params.set('prodi', selectedProdi);
     }
+    if (isAdmin && selectedStatus && selectedStatus !== 'all') {
+      params.set('status', selectedStatus);
+    }
     const queryString = params.toString();
     const newUrl = queryString ? `${pathname}?${queryString}` : pathname;
     window.history.replaceState(null, '', newUrl);
-  }, [searchQuery, selectedProdi, pathname]);
+  }, [searchQuery, selectedProdi, selectedStatus, isAdmin, pathname]);
 
   // Fetch vacancies data
   const fetchData = useCallback(() => {
@@ -181,6 +187,13 @@ function DamaraApp() {
     // In public mode, hide inactive ones
     if (!isAdmin) {
       result = result.filter((v) => v.is_active);
+    } else {
+      // In admin mode, apply status filter
+      if (selectedStatus === 'active') {
+        result = result.filter((v) => v.is_active);
+      } else if (selectedStatus === 'inactive') {
+        result = result.filter((v) => !v.is_active);
+      }
     }
 
     // Filter by bookmarks if 'saved' tab is active
@@ -203,7 +216,7 @@ function DamaraApp() {
     }
 
     return result;
-  }, [vacancies, searchQuery, selectedProdi, bookmarkedIds, isAdmin]);
+  }, [vacancies, searchQuery, selectedProdi, selectedStatus, bookmarkedIds, isAdmin]);
 
   // Pagination calculation
   const totalPages = Math.max(1, Math.ceil(filteredVacancies.length / ITEMS_PER_PAGE));
@@ -319,27 +332,52 @@ function DamaraApp() {
             />
 
             <div className="space-y-6 pb-16">
-              {/* Search Bar (Mockup 1 & 2) */}
-              <div className="px-2">
-                <SearchBar
-                  value={searchQuery}
-                  onChange={(q) => {
-                    setSearchQuery(q);
-                    setCurrentPage(1);
-                  }}
-                  placeholder="Temukan Lowongan"
-                />
-              </div>
+              {/* Search Bar & Filters: Admin mode vs Public mode */}
+              {isAdmin ? (
+                <div className="px-2">
+                  <AdminFilterBar
+                    searchQuery={searchQuery}
+                    onSearchChange={(q) => {
+                      setSearchQuery(q);
+                      setCurrentPage(1);
+                    }}
+                    selectedStatus={selectedStatus}
+                    onStatusChange={(status) => {
+                      setSelectedStatus(status);
+                      setCurrentPage(1);
+                    }}
+                    selectedProdi={selectedProdi}
+                    onProdiChange={(prodi) => {
+                      setSelectedProdi(prodi);
+                      setCurrentPage(1);
+                    }}
+                  />
+                </div>
+              ) : (
+                <>
+                  {/* Search Bar (Mockup 1 & 2) */}
+                  <div className="px-2">
+                    <SearchBar
+                      value={searchQuery}
+                      onChange={(q) => {
+                        setSearchQuery(q);
+                        setCurrentPage(1);
+                      }}
+                      placeholder="Temukan Lowongan"
+                    />
+                  </div>
 
-              {/* Prodi Filter Pills */}
-              <ProgramFilter
-                selectedTag={selectedProdi}
-                onSelectTag={(tag) => {
-                  setSelectedProdi(tag);
-                  setCurrentPage(1);
-                }}
-                bookmarkCount={bookmarkedIds.length}
-              />
+                  {/* Prodi Filter Pills */}
+                  <ProgramFilter
+                    selectedTag={selectedProdi}
+                    onSelectTag={(tag) => {
+                      setSelectedProdi(tag);
+                      setCurrentPage(1);
+                    }}
+                    bookmarkCount={bookmarkedIds.length}
+                  />
+                </>
+              )}
 
               {/* Section Header: "Daftar Lowongan" & "+ Tambah" (Mockup 2) */}
               <div className="flex items-center justify-between px-2 pt-2">
@@ -359,7 +397,7 @@ function DamaraApp() {
                       setEditingVacancy(null);
                       setIsFormOpen(true);
                     }}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-2xl glass-btn-primary text-xs font-bold text-white shadow-lg cursor-pointer transition-all hover:scale-105"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full glass-btn-primary text-xs font-bold text-white shadow-lg cursor-pointer transition-all hover:scale-105"
                   >
                     <Plus className="w-4 h-4" />
                     <span>Tambah</span>
@@ -393,11 +431,12 @@ function DamaraApp() {
                   onReset={() => {
                     setSearchQuery('');
                     setSelectedProdi('all');
+                    setSelectedStatus('all');
                   }}
                   message={
                     selectedProdi === 'saved'
                       ? 'Belum ada lowongan yang Anda simpan. Tekan ikon bookmark pada kartu lowongan untuk menyimpannya.'
-                      : 'Tidak ada lowongan yang sesuai. Coba ubah kata kunci atau filter prodi.'
+                      : 'Tidak ada lowongan yang sesuai. Coba ubah kata kunci atau filter prodi / status.'
                   }
                 />
               ) : (

@@ -68,19 +68,6 @@ function LoginFormContent() {
 
         {/* Glass Login Card */}
         <div className="glass-card rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#D9B26A]/30">
-          {/* Header Icon & Title */}
-          <div className="flex flex-col items-center text-center mb-6">
-            <div className="w-12 h-12 rounded-2xl bg-[#B07A3C]/40 border border-[#D9B26A]/40 flex items-center justify-center text-[#D9B26A] mb-3 shadow-lg">
-              <Shield className="w-6 h-6" />
-            </div>
-            <h1 className="font-heading font-bold text-xl text-[#FAFAFA]">
-              Akses Admin DAMARA
-            </h1>
-            <p className="text-xs text-stone-300/80 mt-1">
-              Masuk untuk mengelola direktori lowongan magang BEM FTMM UNAIR
-            </p>
-          </div>
-
           {/* Error Alert */}
           {errorMessage && (
             <div className="mb-4 p-3 rounded-2xl bg-rose-950/60 border border-rose-500/40 text-rose-200 text-xs flex items-center gap-2">
@@ -97,7 +84,7 @@ function LoginFormContent() {
                 htmlFor="admin-email"
                 className="block text-stone-200 font-semibold mb-1"
               >
-                Email Administrator
+                Email
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-stone-400">
@@ -157,7 +144,7 @@ function LoginFormContent() {
                 type="submit"
                 id="btn-login-submit"
                 disabled={isLoading}
-                className="w-full py-3 rounded-2xl glass-btn-primary font-bold text-xs sm:text-sm text-white shadow-lg cursor-pointer transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+                className="w-full py-3 rounded-full glass-btn-primary font-bold text-xs sm:text-sm text-white shadow-lg cursor-pointer transition-all disabled:opacity-50 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
               >
                 {isLoading ? (
                   <>

@@ -122,7 +122,7 @@ export function AdminAuthModal({
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3 rounded-2xl glass-btn-primary font-bold text-xs sm:text-sm text-white shadow-lg cursor-pointer transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-full glass-btn-primary font-bold text-xs sm:text-sm text-white shadow-lg cursor-pointer transition-all disabled:opacity-50 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
             >
               {isLoading ? (
                 <>

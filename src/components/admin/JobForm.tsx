@@ -337,7 +337,7 @@ export function JobForm({
             type="button"
             onClick={onCancel}
             disabled={isSubmitting}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-2xl border border-white/20 bg-black/20 text-stone-300 hover:bg-white/10 hover:text-white text-xs sm:text-sm font-semibold transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/20 bg-black/20 text-stone-300 hover:bg-white/10 hover:text-white text-xs sm:text-sm font-semibold transition-all cursor-pointer"
           >
             <X className="w-4 h-4" />
             <span>Batal</span>
@@ -346,7 +346,7 @@ export function JobForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex items-center gap-2 px-8 py-2.5 rounded-2xl glass-btn-primary text-xs sm:text-sm font-bold text-white shadow-lg transition-all cursor-pointer disabled:opacity-50"
+            className="inline-flex items-center gap-2 px-8 py-2.5 rounded-full glass-btn-primary text-xs sm:text-sm font-bold text-white shadow-lg transition-all cursor-pointer disabled:opacity-50 hover:scale-105 active:scale-95"
           >
             <Check className="w-4 h-4" />
             <span>{isSubmitting ? 'Menyimpan...' : 'Simpan'}</span>

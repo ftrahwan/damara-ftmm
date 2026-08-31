@@ -19,7 +19,7 @@ export function ProgramFilter({
 
   return (
     <div className="w-full max-w-3xl mx-auto overflow-x-auto pb-1 no-scrollbar">
-      <div className="flex items-center justify-start sm:justify-center gap-2 min-w-max px-2">
+      <div className="flex items-center justify-start sm:justify-center gap-2.5 min-w-max px-2">
         {prodis.map((name) => {
           const isSelected =
             selectedTag === name ||
@@ -30,10 +30,10 @@ export function ProgramFilter({
               key={name}
               type="button"
               onClick={() => onSelectTag(name === 'Semua' ? 'all' : name)}
-              className={`px-4 py-2 rounded-2xl text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
+              className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                 isSelected
-                  ? 'glass-pill-active scale-105 shadow-md'
-                  : 'glass-pill opacity-85 hover:opacity-100'
+                  ? 'bg-[#B07A3C] text-[#FAFAFA] border border-[#D9B26A] shadow-md scale-105 font-bold'
+                  : 'bg-[#9E6935]/80 hover:bg-[#A8723C] text-[#DEBE7E] hover:text-[#FAFAFA] border border-[#D9B26A]/20'
               }`}
             >
               {name}
@@ -46,13 +46,13 @@ export function ProgramFilter({
           <button
             type="button"
             onClick={() => onSelectTag('saved')}
-            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-2xl text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
+            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
               selectedTag === 'saved'
-                ? 'glass-pill-active scale-105 shadow-md text-[#F4C542]'
-                : 'glass-pill opacity-85 hover:opacity-100'
+                ? 'bg-[#B07A3C] text-[#FAFAFA] border border-[#D9B26A] shadow-md scale-105 font-bold'
+                : 'bg-[#9E6935]/80 hover:bg-[#A8723C] text-[#DEBE7E] hover:text-[#FAFAFA] border border-[#D9B26A]/20'
             }`}
           >
-            <Bookmark className="w-3.5 h-3.5 fill-current" />
+            <Bookmark className="w-3.5 h-3.5 fill-current text-[#DEBE7E]" />
             <span>Tersimpan ({bookmarkCount})</span>
           </button>
         )}

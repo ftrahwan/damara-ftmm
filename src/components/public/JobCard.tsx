@@ -220,7 +220,7 @@ export function JobCard({
           href={job.source_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl glass-btn-primary text-xs font-bold text-white shadow-md cursor-pointer transition-all hover:scale-105 active:scale-95"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full glass-btn-primary text-xs font-bold text-white shadow-md cursor-pointer transition-all hover:scale-105 active:scale-95"
         >
           <span>Lebih Lengkap</span>
           <ExternalLink className="w-3.5 h-3.5" />

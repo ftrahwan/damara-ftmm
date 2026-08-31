@@ -12,16 +12,16 @@ export function StatsOverview({ metrics }: StatsOverviewProps) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
       {/* Metric 1: Total Lowongan */}
-      <div className="rounded-3xl border border-stone-200 bg-white p-5 shadow-xs dark:border-stone-800 dark:bg-stone-900">
+      <div className="rounded-3xl glass-card p-5 shadow-xl border border-[#D9B26A]/30">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400">
+          <span className="text-xs font-bold uppercase tracking-wider text-stone-300">
             Total Lowongan
           </span>
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-brand-primary dark:bg-amber-950/60 dark:text-amber-200">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#B07A3C]/30 text-[#D9B26A] border border-[#D9B26A]/30">
             <Briefcase className="h-5 w-5" />
           </div>
         </div>
-        <p className="mt-3 font-heading text-3xl font-black text-brand-primary dark:text-amber-100">
+        <p className="mt-3 font-heading text-3xl font-black text-[#FAFAFA]">
           {metrics.totalJobs}
         </p>
         <span className="mt-1 block text-xs text-stone-400">
@@ -30,16 +30,16 @@ export function StatsOverview({ metrics }: StatsOverviewProps) {
       </div>
 
       {/* Metric 2: Lowongan Aktif */}
-      <div className="rounded-3xl border border-stone-200 bg-white p-5 shadow-xs dark:border-stone-800 dark:bg-stone-900">
+      <div className="rounded-3xl glass-card p-5 shadow-xl border border-emerald-500/30">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+          <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
             Lowongan Aktif
           </span>
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-950/60 dark:text-emerald-400">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-950/60 text-emerald-400 border border-emerald-500/40">
             <CheckCircle2 className="h-5 w-5" />
           </div>
         </div>
-        <p className="mt-3 font-heading text-3xl font-black text-emerald-600 dark:text-emerald-400">
+        <p className="mt-3 font-heading text-3xl font-black text-emerald-400">
           {metrics.activeJobs}
         </p>
         <span className="mt-1 block text-xs text-stone-400">
@@ -48,16 +48,16 @@ export function StatsOverview({ metrics }: StatsOverviewProps) {
       </div>
 
       {/* Metric 3: Lowongan Nonaktif */}
-      <div className="rounded-3xl border border-stone-200 bg-white p-5 shadow-xs dark:border-stone-800 dark:bg-stone-900">
+      <div className="rounded-3xl glass-card p-5 shadow-xl border border-stone-500/30">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400">
+          <span className="text-xs font-bold uppercase tracking-wider text-stone-400">
             Lowongan Nonaktif
           </span>
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-stone-100 text-stone-500 dark:bg-stone-800 dark:text-stone-400">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-stone-900/60 text-stone-400 border border-stone-600/40">
             <XCircle className="h-5 w-5" />
           </div>
         </div>
-        <p className="mt-3 font-heading text-3xl font-black text-stone-600 dark:text-stone-300">
+        <p className="mt-3 font-heading text-3xl font-black text-stone-300">
           {metrics.inactiveJobs}
         </p>
         <span className="mt-1 block text-xs text-stone-400">
