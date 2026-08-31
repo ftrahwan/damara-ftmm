@@ -12,8 +12,14 @@ interface AdminNavbarProps {
 
 export function AdminNavbar({ userEmail }: AdminNavbarProps) {
   const router = useRouter();
-  const session = typeof window !== 'undefined' ? getAdminSession() : null;
-  const currentEmail = userEmail || session?.email || 'admin@ftmm.unair.ac.id';
+  const [currentEmail, setCurrentEmail] = React.useState(userEmail || 'admin@ftmm.unair.ac.id');
+
+  React.useEffect(() => {
+    const session = getAdminSession();
+    if (session?.email) {
+      setCurrentEmail(session.email);
+    }
+  }, []);
 
   const handleLogout = async () => {
     await adminLogout();

@@ -25,7 +25,25 @@ import {
 } from '@/lib/data-service';
 import { Vacancy, VacancyFormData } from '@/lib/types';
 import { getAdminSession, adminLogout } from '@/lib/auth';
-import { Plus, Phone, Send, ChevronLeft, ChevronRight, AlertCircle, RefreshCw } from 'lucide-react';
+import { Plus, Phone, ChevronLeft, ChevronRight, AlertCircle, RefreshCw } from 'lucide-react';
+
+function InstagramIcon({ className = 'w-3.5 h-3.5' }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
 
 const ITEMS_PER_PAGE = 6;
 const BOOKMARK_STORAGE_KEY = 'damara_bookmarked_ids';
@@ -46,22 +64,30 @@ function DamaraApp() {
   const [selectedProdi, setSelectedProdi] = useState(initialProdi);
   const [selectedStatus, setSelectedStatus] = useState<StatusFilterOption>(initialStatus);
 
-  // Student bookmarks state
-  const [bookmarkedIds, setBookmarkedIds] = useState<string[]>(() => {
-    if (typeof window === 'undefined') return [];
+  // Student bookmarks state (initialized consistently for SSR)
+  const [bookmarkedIds, setBookmarkedIds] = useState<string[]>([]);
+
+  // Admin state (initialized consistently for SSR)
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
+  const [isClientMounted, setIsClientMounted] = useState<boolean>(false);
+
+  // Load client localStorage and session after hydration
+  useEffect(() => {
+    setIsClientMounted(true);
     try {
       const saved = localStorage.getItem(BOOKMARK_STORAGE_KEY);
-      return saved ? JSON.parse(saved) : [];
-    } catch {
-      return [];
+      if (saved) {
+        setBookmarkedIds(JSON.parse(saved));
+      }
+    } catch (e) {
+      console.error('Failed to parse bookmarks:', e);
     }
-  });
 
-  // Admin state - lazy initialized from session
-  const [isAdmin, setIsAdmin] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    return Boolean(getAdminSession());
-  });
+    const session = getAdminSession();
+    if (session) {
+      setIsAdmin(true);
+    }
+  }, []);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [editingVacancy, setEditingVacancy] = useState<Vacancy | null>(null);
@@ -381,14 +407,9 @@ function DamaraApp() {
 
               {/* Section Header: "Daftar Lowongan" & "+ Tambah" (Mockup 2) */}
               <div className="flex items-center justify-between px-2 pt-2">
-                <div className="flex items-center gap-2">
-                  <h2 className="font-heading font-bold text-lg sm:text-xl text-[#FAFAFA] tracking-tight">
-                    {selectedProdi === 'saved' ? 'Lowongan Tersimpan' : 'Daftar Lowongan'}
-                  </h2>
-                  <span className="px-2 py-0.5 rounded-full text-[11px] font-bold bg-[#B07A3C]/40 border border-[#D9B26A]/40 text-[#FAFAFA]">
-                    {filteredVacancies.length}
-                  </span>
-                </div>
+                <h2 className="font-heading font-bold text-lg sm:text-xl text-[#FAFAFA] tracking-tight">
+                  {selectedProdi === 'saved' ? 'Lowongan Tersimpan' : 'Daftar Lowongan'}
+                </h2>
 
                 {isAdmin && (
                   <button
@@ -510,46 +531,47 @@ function DamaraApp() {
       {!isFormOpen && (
         <footer className="w-full border-t border-white/10 bg-[#351E0E]/80 backdrop-blur-xl mt-auto py-8 text-stone-200">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            {/* Kabinet Mandala Official Logo & Info */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-              <div className="space-y-2">
+            {/* Kabinet Mandala Official Logo, Info & Kontak */}
+            <div className="flex flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
+              {/* Logo & Address */}
+              <div className="space-y-1.5 sm:space-y-2 max-w-[55%] sm:max-w-none">
                 <div className="inline-block">
                   <Image
                     src="/logo-mandala.png"
                     alt="Logo Kabinet Mandala BEM FTMM UNAIR — Makna, Daya, Laksana"
                     width={260}
                     height={82}
-                    className="h-12 sm:h-14 w-auto object-contain select-none"
+                    className="h-10 sm:h-14 w-auto object-contain select-none"
                     priority
                   />
                 </div>
-                <p className="text-xs text-stone-300/80 font-normal">
+                <p className="text-[11px] sm:text-xs text-stone-300/80 font-normal leading-tight">
                   Gedung Nano, Kampus C UNAIR, Kota Surabaya
                 </p>
               </div>
 
-              {/* Kontak Section */}
-              <div className="space-y-2">
-                <h5 className="font-bold text-xs text-[#FAFAFA] tracking-wide uppercase">Kontak</h5>
-                <div className="space-y-1.5 text-xs text-stone-300/80">
+              {/* Kontak Section (Positioned beside logo on mobile, right-aligned on desktop) */}
+              <div className="space-y-1.5 sm:space-y-2 shrink-0">
+                <h5 className="font-bold text-[11px] sm:text-xs text-[#FAFAFA] tracking-wide uppercase">Kontak</h5>
+                <div className="space-y-1.5 text-[11px] sm:text-xs text-stone-300/80">
                   <div className="flex items-center gap-2">
-                    <Phone className="w-3.5 h-3.5 text-[#D9B26A]" />
+                    <Phone className="w-3.5 h-3.5 text-[#D9B26A] shrink-0" />
                     <a
                       href="https://wa.me/628577795167"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-[#D9B26A] transition-colors"
+                      className="hover:text-[#D9B26A] transition-colors whitespace-nowrap"
                     >
                       +62-857-7795-167
                     </a>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Send className="w-3.5 h-3.5 text-[#D9B26A]" />
+                    <InstagramIcon className="w-3.5 h-3.5 text-[#D9B26A] shrink-0" />
                     <a
                       href="https://instagram.com/psdm.bemftmm"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-[#D9B26A] transition-colors"
+                      className="hover:text-[#D9B26A] transition-colors whitespace-nowrap"
                     >
                       psdm.bemftmm
                     </a>

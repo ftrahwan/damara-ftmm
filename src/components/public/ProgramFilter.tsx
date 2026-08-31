@@ -18,8 +18,8 @@ export function ProgramFilter({
   const prodis = ['Semua', ...FTMM_PRODI_LIST.map((p) => p.name)];
 
   return (
-    <div className="w-full max-w-3xl mx-auto overflow-x-auto pb-1 no-scrollbar">
-      <div className="flex items-center justify-start sm:justify-center gap-2.5 min-w-max px-2">
+    <div className="w-full max-w-3xl mx-auto overflow-x-auto py-2.5 px-1 no-scrollbar">
+      <div className="flex items-center justify-start sm:justify-center gap-2.5 min-w-max px-2 py-1">
         {prodis.map((name) => {
           const isSelected =
             selectedTag === name ||
@@ -30,9 +30,9 @@ export function ProgramFilter({
               key={name}
               type="button"
               onClick={() => onSelectTag(name === 'Semua' ? 'all' : name)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
+              className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer select-none active:scale-95 ${
                 isSelected
-                  ? 'bg-[#B07A3C] text-[#FAFAFA] border border-[#D9B26A] shadow-md scale-105 font-bold'
+                  ? 'bg-[#B07A3C] text-[#FAFAFA] border border-[#D9B26A] shadow-md font-bold ring-1 ring-[#D9B26A]/50'
                   : 'bg-[#9E6935]/80 hover:bg-[#A8723C] text-[#DEBE7E] hover:text-[#FAFAFA] border border-[#D9B26A]/20'
               }`}
             >
@@ -46,9 +46,9 @@ export function ProgramFilter({
           <button
             type="button"
             onClick={() => onSelectTag('saved')}
-            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
+            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer select-none active:scale-95 ${
               selectedTag === 'saved'
-                ? 'bg-[#B07A3C] text-[#FAFAFA] border border-[#D9B26A] shadow-md scale-105 font-bold'
+                ? 'bg-[#B07A3C] text-[#FAFAFA] border border-[#D9B26A] shadow-md font-bold ring-1 ring-[#D9B26A]/50'
                 : 'bg-[#9E6935]/80 hover:bg-[#A8723C] text-[#DEBE7E] hover:text-[#FAFAFA] border border-[#D9B26A]/20'
             }`}
           >

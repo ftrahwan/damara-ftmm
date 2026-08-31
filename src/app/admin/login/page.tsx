@@ -152,7 +152,7 @@ function LoginFormContent() {
                     <span>Memverifikasi dengan Supabase...</span>
                   </>
                 ) : (
-                  <span>Masuk Sesi Admin</span>
+                  <span>Masuk</span>
                 )}
               </button>
             </div>
