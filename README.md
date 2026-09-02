@@ -91,6 +91,3 @@ npm run build
 ```
 
 ---
-
-## 📄 Lisensi
-Dikembangkan untuk **Fakultas Teknologi Maju dan Multidisiplin (FTMM) Universitas Airlangga**.
