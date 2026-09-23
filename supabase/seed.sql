@@ -6,7 +6,7 @@ VALUES
     'Jakarta',
     'https://www.linkedin.com/jobs/view/4444824507/',
     'Strong foundation in Design Engineering and Product Design, with the ability to contribute to practical, manufacturable solutions. Knowledge of Mechanical Engineering principles for structural integrity, materials selection, and performance analysis. Proficiency in Computer-Aided Design (CAD) tools (e.g., SolidWorks, Fusion 360, or similar) for modeling, assemblies, and technical drawings. Basic understanding of Electrical Engineering concepts is beneficial for integrating simple electronic components into designs. Currently pursuing or recently completed a degree in Mechanical Engineering, Design Engineering, Product Design, or a related field. Some Experience in 3D printing technologies, additive manufacturing processes, and rapid prototyping. Attention to detail, problem-solving mindset, and ability to work collaboratively in a multidisciplinary team.',
-    ARRAY['Robotika & AI', 'Teknik Industri'],
+    ARRAY['Robotika & AI', 'Industri'],
     false,
     NOW() - INTERVAL '1 days',
     NOW() - INTERVAL '1 days'
@@ -28,7 +28,7 @@ VALUES
     'Serang',
     'https://www.linkedin.com/jobs/view/4436071250/',
     'Undergraduate student majoring in Industrial Engineering / Management / Statistics / Engineering (Semester 5–8 only). Strong analytical thinking and problem-solving mindset. Proactive, eager to learn, and able to work in a dynamic environment. Comfortable working in an full time onsite arrangement at Serang Mill.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     false,
     NOW() - INTERVAL '3 days',
     NOW() - INTERVAL '3 days'
@@ -39,7 +39,7 @@ VALUES
     'Karawang',
     'https://www.linkedin.com/jobs/view/4418177960/',
     'Mahasiswa AKTIF, minimal tahun kedua atau ketiga. Bersedia menjalani magang secara langsung di lokasi (onsite). Akrab/familiar dengan manajemen manufaktur & produksi. Cekatan dalam kerja sama tim berbasis data serta memiliki kemampuan komunikasi yang baik. Mampu mengoperasikan fungsi-fungsi dasar Excel.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     false,
     NOW() - INTERVAL '4 days',
     NOW() - INTERVAL '4 days'
@@ -50,7 +50,7 @@ VALUES
     'Jakarta',
     'https://www.linkedin.com/jobs/view/4423623900/',
     'Engineering, Supply Chain or similar field of study. In a degree program or have completed a minimum degree program. Good command in English spoken and written language. Microsoft Office. Creative, proactive and out of the box thinking. Ability to work with minimum supervision.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     false,
     NOW() - INTERVAL '5 days',
     NOW() - INTERVAL '5 days'
@@ -72,7 +72,7 @@ VALUES
     'Jakarta',
     'https://www.linkedin.com/jobs/view/4437566726/',
     'Undergraduate student of bachelor''s degree in electrical engineering. Recommendation letter from the university. Able to do minimum of three months internship. Willing to fully comply with the regulations during the internship. English and Bahasa Indonesia proficiencies.',
-    ARRAY['Teknik Elektro'],
+    ARRAY['Elektro'],
     false,
     NOW() - INTERVAL '7 days',
     NOW() - INTERVAL '7 days'
@@ -83,7 +83,7 @@ VALUES
     'Bogor',
     'https://www.linkedin.com/jobs/view/4440405804/',
     'Candidate must possess at least a Bachelor''s Degree in major: Electrical (arus lemah) with a minimum GPA of 3.5. Fresh graduates are encouraged to apply. Having good communication skills, Open Minded, Hungry, Curious & Fast Learner and Technology Savvy. Willing to place in Wanaherang, Kab. Bogor.',
-    ARRAY['Teknik Elektro', 'Teknik Industri'],
+    ARRAY['Elektro', 'Industri'],
     false,
     NOW() - INTERVAL '8 days',
     NOW() - INTERVAL '8 days'
@@ -94,7 +94,7 @@ VALUES
     'Tangerang',
     'https://www.linkedin.com/jobs/view/4442604524/',
     'Final-year student or fresh graduate pursuing a Bachelor''s degree in Operations Management, Industrial Engineering, Supply Chain Management, Information Systems, or a related field. Basic understanding of business processes and operational workflows. Familiarity with inventory management or supply chain concepts is an advantage. Strong analytical thinking and attention to detail. Good communication and coordination skills with the ability to work across teams. Proficient in Microsoft Excel (Pivot Tables, formulas, and basic data analysis). Eager to learn, proactive, and able to work in a fast-paced environment. Full WFO Lippo Karawaci, Tangerang.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     false,
     NOW() - INTERVAL '9 days',
     NOW() - INTERVAL '9 days'
@@ -105,7 +105,7 @@ VALUES
     'Batam',
     'https://www.linkedin.com/jobs/view/4438190114/',
     'Currently pursuing a Diploma or Bachelor''s Degree in Mechanical Engineering, Materials Engineering, Industrial Engineering, Naval Architecture, or a related field. Must remain an active university student throughout the internship period. Interest in Quality Control, Inspection, and Non-Destructive Testing (NDT). Applicants should not be participating in another internship program. Applicants should have strong communication skills and ability to work in a team environment. Attention to detail and a willingness to follow instructions.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     false,
     NOW() - INTERVAL '10 days',
     NOW() - INTERVAL '10 days'
@@ -116,7 +116,7 @@ VALUES
     'Batam',
     'https://www.linkedin.com/jobs/view/4443323696/',
     'Active college student in S1 (Material Engineering, Mechanical Engineering, Electrical Engineering). Internship placement is available in McDermott Batam Fabrication Yard. Applicants should not be participating in another internship program. Applicants should have strong communication skills and ability to work in a team environment. Attention to detail and a willingness to follow instructions.',
-    ARRAY['Rekayasa Nano', 'Teknik Elektro'],
+    ARRAY['Rekayasa Nano', 'Elektro'],
     true,
     NOW() - INTERVAL '11 days',
     NOW() - INTERVAL '11 days'
@@ -127,7 +127,7 @@ VALUES
     'Aceh',
     'https://www.linkedin.com/jobs/view/4443141450/',
     'Educational Background: Currently pursuing a Graduate degree in Computer Science, Electrical Engineering, or a related technical field. Programming Skills: Proficiency in Python and familiarity with go and CUDA is a plus. Foundational Knowledge in Machine Learning: Understanding of attention based models, PyTorch, and GPU-accelerated computing. Problem-Solving Mindset: Strong analytical skills, with the ability to troubleshoot performance issues and propose innovative optimization strategies. Team Player: Excellent communication skills, eagerness to learn, and the ability to collaborate effectively with diverse teams.',
-    ARRAY['Sains Data', 'Robotika & AI', 'Teknik Elektro'],
+    ARRAY['Sains Data', 'Robotika & AI', 'Elektro'],
     false,
     NOW() - INTERVAL '12 days',
     NOW() - INTERVAL '12 days'
@@ -160,7 +160,7 @@ VALUES
     'Cikarang',
     'https://www.linkedin.com/jobs/view/4442209235/',
     'Active Bachelor Degree or Diploma student (max. 8th semester) in Industrial/ Mechanical/ Electrical/ Electronics/ Manufacturing Engineering or equivalent. Proficient in AutoCAD, LADM, MTM, Microsoft Office applications, Gerber software. Analytical with a keen eye for detail. Customer service and quality oriented. Good written and spoken English. Willing to be placed in Cikarang.',
-    ARRAY['Teknik Industri', 'Teknik Elektro'],
+    ARRAY['Industri', 'Elektro'],
     false,
     NOW() - INTERVAL '15 days',
     NOW() - INTERVAL '15 days'
@@ -171,7 +171,7 @@ VALUES
     'Cikarang',
     'https://www.linkedin.com/jobs/view/4441150709/',
     'Currently pursuing a degree in Engineering, preferably in Automation, Electrical, Mechatronic or a related field. Knowledge of automation technologies, PLC programming, and control systems. Familiarity with industrial communication protocols such as Modbus, Profibus, or Ethernet/IP. Basic understanding of electrical circuits and wiring diagrams. Proficiency in programming languages such as ladder logic, structured text, or function block diagram. Strong problem-solving skills and attention to detail. Excellent communication and interpersonal skills.',
-    ARRAY['Teknik Elektro', 'Robotika & AI'],
+    ARRAY['Elektro', 'Robotika & AI'],
     false,
     NOW() - INTERVAL '16 days',
     NOW() - INTERVAL '16 days'
@@ -182,7 +182,7 @@ VALUES
     'Cikarang',
     'https://www.linkedin.com/jobs/view/4444091416/',
     'University students in Industrial Engineering or related majors. Preferable with strong organizational background. Good communicator in English & Bahasa. Strong drive in project management and execution. Continuous Improvement/CI and/or Kaizen experience background is a plus. Willing to intern for min. 6 months onsite at Cikarang. Willing to mobile work between Cikarang and key supplier (transport provided). Minimum offline academic responsibilities.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     true,
     NOW() - INTERVAL '17 days',
     NOW() - INTERVAL '17 days'
@@ -193,7 +193,7 @@ VALUES
     'Cilandak',
     'https://www.linkedin.com/jobs/view/4440748203/',
     'Basic knowledge about control systems (PLCs, HMIs, VSDs, SCADAs, Servo Drives and Axis, industrial communication protocols...). Intermediate level about PLC & programming languages (ladder, python, sequencer, structure text...). Intermediate video editing skills. Proactive and structured work. Good organizational and analytical skills. Excellent communication skills and teamwork. Fluency in English. Active student with max 8th Semester of Faculty of Electrical Engineering, Faculty of Mechanical Engineering.',
-    ARRAY['Teknik Elektro', 'Robotika & AI'],
+    ARRAY['Elektro', 'Robotika & AI'],
     true,
     NOW() - INTERVAL '18 days',
     NOW() - INTERVAL '18 days'
@@ -237,7 +237,7 @@ VALUES
     'Surabaya',
     'https://www.linkedin.com/jobs/view/4449366263/',
     'Bachelor''s degree in Civil Engineering, Mechanical Engineering, or a related field. Fresh graduates are welcome to apply. Able to communicate in English, with at least passive proficiency (reading and writing). Strong communication, data analysis, administrative, and document management skills. Eager to learn, proactive, responsible, and able to work independently as well as in a team. Willing to participate in the internship program for the specified duration.',
-    ARRAY['Teknik Industri', 'Teknik Elektro'],
+    ARRAY['Industri', 'Elektro'],
     true,
     NOW() - INTERVAL '22 days',
     NOW() - INTERVAL '22 days'
@@ -248,7 +248,7 @@ VALUES
     'Jakarta',
     'https://www.linkedin.com/jobs/view/4412585884/',
     'Be pursuing a Bachelor''s Degree or Professional Degree in Engineering (Electrical / Electronic) or equivalent course. Have good spoken and written communications skills in English and Bahasa Indonesia. Good interpersonal skills. Must be team-focused and highly self-motivated with a desire to explore new approaches and technology. Possess good project management skill set and be able to work independently on assigned projects. Be willing to travel within Indonesia occasionally. Business related travel expenses will be reimbursed.',
-    ARRAY['Teknik Elektro', 'Robotika & AI'],
+    ARRAY['Elektro', 'Robotika & AI'],
     true,
     NOW() - INTERVAL '23 days',
     NOW() - INTERVAL '23 days'
@@ -292,7 +292,7 @@ VALUES
     'Jakarta',
     'https://www.linkedin.com/jobs/view/4451931745/',
     'Active students or fresh graduates majoring in Industrial Engineering from reputable university. Proficient in Microsoft Excel is required. Detail-oriented, analytical, and comfortable working with data. Good communication and interpersonal skills. Fast learner, adaptable, and able to work independently or as part of a team. Available to work full-time from the office (Monday - Friday, 08.30 - 17.30) in Central Jakarta.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     true,
     NOW() - INTERVAL '27 days',
     NOW() - INTERVAL '27 days'
@@ -314,7 +314,7 @@ VALUES
     'Bandung',
     'https://www.linkedin.com/jobs/view/4437809724/',
     'Currently pursuing a Bachelor''s or Master''s degree in Industrial Engineering, Mechanical Engineering, Materials Engineering, or other related majors. Proficiency in Microsoft Office (Excel, Word, PowerPoint) and familiarity with data analysis tools is a plus. Excellent communication and interpersonal skills, capable of working effectively in a team environment. Having organizational experiences is a desired qualification. Familiarity with various engineering design software is a plus. Ability to communicate in English (speaking, listening, and writing).',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     true,
     NOW() - INTERVAL '29 days',
     NOW() - INTERVAL '29 days'
@@ -325,7 +325,7 @@ VALUES
     'Bekasi',
     'https://www.linkedin.com/jobs/view/4449382570/',
     'A final-year student with a mandatory internship program from your University. An academic background in Mechanical, Industrial, or Packaging Engineering. A strong willingness to learn packaging testing protocols, line trials, and optimization. Excellent communication skills in both Bahasa Indonesia and English. A detail-oriented mindset with basic technical background or familiarity with measurement tools. An interest or skill in creating digital forms and documentation.',
-    ARRAY['Teknik Industri', 'Rekayasa Nano'],
+    ARRAY['Industri', 'Rekayasa Nano'],
     true,
     NOW() - INTERVAL '30 days',
     NOW() - INTERVAL '30 days'
@@ -336,7 +336,7 @@ VALUES
     'Bekasi',
     'https://www.linkedin.com/jobs/view/4455621908/',
     'A final-year student (preferably majoring in Engineering or a related field) with a mandatory university internship requirement. Basic skills in Microsoft Excel for data management, tracking, and reporting. A strong detail-oriented mindset with a natural comfort for managing data and tracking processes. Excellent communication skills in both Bahasa Indonesia and English. A proactive attitude and the ability to adapt quickly to a fast-paced manufacturing environment.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     true,
     NOW() - INTERVAL '31 days',
     NOW() - INTERVAL '31 days'
@@ -347,7 +347,7 @@ VALUES
     'Bekasi',
     'https://www.linkedin.com/jobs/view/4448403233/',
     'Contribute to mechanical and electrical design for the development of ALVA product, including feasibility studies and exploratory engineering calculations for EV-related concepts. Support the development, assembly, and testing of prototypes and proof-of-concept systems, including batteries and other EV subsystems. Participate in research and exploration of new concepts and technologies related to electric vehicles. Collaborate closely with cross-functional teams such as R&D, Quality, and Manufacturing to troubleshoot and solve complex technical issues. Gain hands-on exposure across multiple engineering domains, including batteries, motors, structural components, frames, and swing arms.',
-    ARRAY['Teknik Elektro', 'Robotika & AI'],
+    ARRAY['Elektro', 'Robotika & AI'],
     true,
     NOW() - INTERVAL '32 days',
     NOW() - INTERVAL '32 days'
@@ -358,7 +358,7 @@ VALUES
     'Cikarang',
     'https://www.linkedin.com/jobs/view/4452197167/',
     'Final year student, bachelor degree in Electrical & Mechanical Engineering. Available for a full-time internship placement in Cikarang. Open to rotating shifts and capable of adapting to different schedules. Strong interest in Data Center, Critical Facilities, Building Services, or Industrial Operations. Basic understanding of: Electrical Power Systems, HVAC / Cooling Systems, Mechanical Equipment and Facility Maintenance. Able to read and understand technical drawings and engineering documentation. Good analytical thinking and problem-solving skills. Proactive, detail-oriented, and eager to learn. Able to communicate effectively and work collaboratively in a team environment.',
-    ARRAY['Teknik Elektro', 'Teknik Industri'],
+    ARRAY['Elektro', 'Industri'],
     true,
     NOW() - INTERVAL '33 days',
     NOW() - INTERVAL '33 days'
@@ -369,7 +369,7 @@ VALUES
     'Jakarta',
     'https://www.linkedin.com/jobs/view/4456733914/',
     'You are currently pursuing a bachelor''s degree in engineering, specializing in Electrical, Electronics, Mechanical, Mechatronics, Computer Science, Industrial Engineering or related fields. You are comfortable communicating in English. You are eager to learn and grow through diverse experiences and from different perspectives. You can collaborate effectively and communicate your progress clearly within a team.',
-    ARRAY['Teknik Elektro', 'Teknik Industri', 'Robotika & AI'],
+    ARRAY['Elektro', 'Industri', 'Robotika & AI'],
     true,
     NOW() - INTERVAL '34 days',
     NOW() - INTERVAL '34 days'
@@ -380,7 +380,7 @@ VALUES
     'Jakarta',
     'https://www.linkedin.com/jobs/view/4445450293/',
     'Final year students currently pursuing of Bachelor''s degree in engineering, Cyber Security, Computer science, information system or related field. Positive and professional working attitude, ability to work under minimum supervision. Analytical and problem-solving abilities. Communication skills in Bahasa and knowledge of English. Willingness to work from office based in Jakarta.',
-    ARRAY['Teknik Elektro', 'Teknik Industri'],
+    ARRAY['Elektro', 'Industri'],
     true,
     NOW() - INTERVAL '35 days',
     NOW() - INTERVAL '35 days'
@@ -391,7 +391,7 @@ VALUES
     'Jakarta',
     'https://www.linkedin.com/jobs/view/4445450293/',
     'Final year students currently pursuing Bachelor''s degree in engineering, Cyber Security, Computer Science, Information System or related field. Positive and professional working attitude, ability to work under minimum supervision. Analytical and problem-solving abilities. Communication skills in Bahasa and knowledge of English. Willingness to work from office based in Jakarta.',
-    ARRAY['Teknik Elektro', 'Teknik Industri'],
+    ARRAY['Elektro', 'Industri'],
     true,
     NOW() - INTERVAL '36 days',
     NOW() - INTERVAL '36 days'
@@ -402,7 +402,7 @@ VALUES
     'Batam',
     'https://www.linkedin.com/jobs/view/4455241214/',
     'Currently pursuing or recently completed a Bachelor''s degree in Civil, Mechanical, Electrical, Building Services Engineering, or a related field. Strong interest in data center operations, facilities, or critical engineering systems. Basic understanding of engineering principles (MEP preferred). Good analytical, troubleshooting, and problem-solving mindset. Good verbal and written communication skills. Willingness to learn, take instructions, and work in a team-based environment.',
-    ARRAY['Teknik Elektro', 'Teknik Industri', 'Robotika & AI'],
+    ARRAY['Elektro', 'Industri', 'Robotika & AI'],
     true,
     NOW() - INTERVAL '37 days',
     NOW() - INTERVAL '37 days'
@@ -413,7 +413,7 @@ VALUES
     'Tangerang Selatan',
     'https://www.linkedin.com/jobs/view/4452437032/',
     'Active college student or fresh graduate in System Information, Industrial Engineering, or related fields. Basic understanding of business processes and documentation. Familiar with Microsoft Visio, Draw.io, or similar process diagramming tools. Proficient in Microsoft Excel, Word, and PowerPoint. Detail-oriented, organized, and willing to learn. Willing to Work On-site in BSD, South Tangerang.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     true,
     NOW() - INTERVAL '38 days',
     NOW() - INTERVAL '38 days'
@@ -424,7 +424,7 @@ VALUES
     'Jakarta',
     'https://www.linkedin.com/jobs/view/4449305228/',
     'Assist in researching packaging trends, materials, and innovative solutions within the beauty industries. Support the sourcing process by gathering information from suppliers, preparing vendor comparison sheets, and coordinating packaging samples. Help review packaging designs, dielines, and prototypes to ensure alignment with brand standards and functional requirements. Assist in documentation and data management for packaging specifications, testing reports, and supplier records. Support compatibility and stability testing coordination between packaging and product formulations. Collaborate with the Product Development and Creative teams to ensure packaging concepts align with campaign direction and design intent. Conduct research on eco-friendly and sustainable packaging materials. Participate in internal meetings and brainstorming sessions, contributing ideas for innovative and practical packaging improvements.',
-    ARRAY['Teknik Industri', 'Rekayasa Nano'],
+    ARRAY['Industri', 'Rekayasa Nano'],
     true,
     NOW() - INTERVAL '39 days',
     NOW() - INTERVAL '39 days'
@@ -435,7 +435,7 @@ VALUES
     'Thamrin',
     'https://www.linkedin.com/jobs/view/4449369807/',
     'Final year or fresh graduate from Business Management, Industrial Engineering or any related fields. Proficient in Microsoft Excel.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     true,
     NOW() - INTERVAL '40 days',
     NOW() - INTERVAL '40 days'
@@ -446,7 +446,7 @@ VALUES
     'Karawang',
     'https://www.linkedin.com/jobs/view/4449369807/',
     'Final year student or fresh graduate from Industrial Engineering or any related fields. Have prior internship experience in Procurement or Supply chain is a plus. Proficient in Microsoft Excel and fluent in English.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     true,
     NOW() - INTERVAL '41 days',
     NOW() - INTERVAL '41 days'
@@ -457,7 +457,7 @@ VALUES
     'Serpong',
     'https://www.linkedin.com/jobs/view/4449369807/',
     'Final year student or fresh graduate from Industrial Engineering or any related fields. Have prior internship experience in Procurement or Supply chain is a plus. Proficient in Microsoft Excel and fluent in English.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     true,
     NOW() - INTERVAL '42 days',
     NOW() - INTERVAL '42 days'
@@ -468,7 +468,7 @@ VALUES
     'Serpong',
     'https://www.linkedin.com/jobs/view/4449369807/',
     'Final year student or fresh graduate from Industrial Engineering or any related fields. Have prior internship experience in Procurement or Supply chain is a plus. Proficient in Microsoft Excel and fluent in English.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     true,
     NOW() - INTERVAL '43 days',
     NOW() - INTERVAL '43 days'
@@ -479,7 +479,7 @@ VALUES
     'Serpong',
     'https://www.linkedin.com/jobs/view/4449369807/',
     'Final year student or fresh graduate from Industrial Engineering or any related fields. Have prior internship experience in Procurement or Supply chain is a plus. Proficient in Microsoft Excel and fluent in English.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     true,
     NOW() - INTERVAL '44 days',
     NOW() - INTERVAL '44 days'
@@ -490,7 +490,7 @@ VALUES
     'Serpong',
     'https://www.linkedin.com/jobs/view/4449369807/',
     'Final year student or fresh graduate from Industrial Engineering or any related fields. Have prior internship experience in Procurement or Supply chain is a plus. Proficient in Microsoft Excel and fluent in English.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     true,
     NOW() - INTERVAL '45 days',
     NOW() - INTERVAL '45 days'
@@ -501,7 +501,7 @@ VALUES
     'Serpong',
     'https://www.linkedin.com/jobs/view/4449369807/',
     'Final year student or fresh graduate from Industrial Engineering or any related fields. Have prior internship experience in Procurement or Supply chain is a plus. Proficient in Microsoft Excel and fluent in English.',
-    ARRAY['Teknik Industri'],
+    ARRAY['Industri'],
     true,
     NOW() - INTERVAL '46 days',
     NOW() - INTERVAL '46 days'

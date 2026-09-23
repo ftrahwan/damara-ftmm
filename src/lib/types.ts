@@ -1,7 +1,7 @@
 export type ProdiName =
   | 'Robotika & AI'
-  | 'Teknik Elektro'
-  | 'Teknik Industri'
+  | 'Elektro'
+  | 'Industri'
   | 'Sains Data'
   | 'Rekayasa Nano';
 

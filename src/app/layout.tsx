@@ -17,7 +17,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "DAMARA — Daya Magang Industri Mandala",
+  title: "DAMARA",
   description:
     "Platform agregator lowongan magang terkurasi khusus mahasiswa Fakultas Teknologi Maju dan Multidisiplin (FTMM) Universitas Airlangga.",
   manifest: "/manifest.json",
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     "BEM FTMM UNAIR",
     "Lowongan Magang Industri",
     "Robotika & AI",
-    "Teknik Elektro",
-    "Teknik Industri",
+    "Elektro",
+    "Industri",
     "Sains Data",
     "Rekayasa Nano",
   ],
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logo-psdm.ico",
   },
 };
 

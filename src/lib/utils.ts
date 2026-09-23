@@ -29,8 +29,8 @@ export function formatDateID(dateString: string | null | undefined): string {
  * Get visual badge colors according to FTMM prodi color identity:
  * - Rekayasa Nano: #EF4444 (Red)
  * - Sains Data: #A855F7 (Purple)
- * - Teknik Industri: #2563EB (Blue)
- * - Teknik Elektro: #F4C542 (Golden Yellow)
+ * - Industri: #2563EB (Blue)
+ * - Elektro: #F4C542 (Golden Yellow)
  * - Robotika & AI: #9CA3AF (Slate Gray)
  */
 export function getProdiBadgeStyle(prodiNameOrSlug: string): {
