@@ -16,7 +16,7 @@ export function HeroSection({
   onLogout,
 }: HeroSectionProps) {
   return (
-    <section className="relative pt-6 pb-4 sm:pt-10 sm:pb-6 text-center">
+    <section className="relative pt-11 pb-5 sm:pt-14 sm:pb-8 text-center">
       {/* Admin Quick Action (Only visible when admin is logged in) */}
       {isAdmin && (
         <div className="flex items-center justify-end gap-2 max-w-4xl mx-auto px-4 mb-3 animate-in fade-in duration-200">
@@ -43,11 +43,11 @@ export function HeroSection({
       {/* Main Branding Logo: DAMARA */}
       <div className="flex justify-center items-center px-4">
         <h1 className="sr-only">DAMARA</h1>
-        <DamaraLogo className="w-full max-w-[340px] sm:max-w-[440px] md:max-w-[540px] h-auto select-none" />
+        <DamaraLogo className="w-full max-w-[320px] sm:max-w-[440px] md:max-w-[520px] h-auto select-none" />
       </div>
 
       {/* Subtitle / Welcome Text */}
-      <p className="mt-3 text-xs sm:text-sm md:text-base text-stone-200/90 max-w-md sm:max-w-xl mx-auto px-6 leading-relaxed font-normal">
+      <p className="mt-2.5 text-[11px] sm:text-sm md:text-base text-amber-50/90 max-w-md sm:max-w-xl mx-auto px-6 leading-relaxed font-medium">
         {isAdmin ? (
           <>
             Panel Pengelolaan Lowongan Magang BEM FTMM UNAIR.

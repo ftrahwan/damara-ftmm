@@ -69,24 +69,26 @@ function DamaraApp() {
 
   // Admin state (initialized consistently for SSR)
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
-  const [isClientMounted, setIsClientMounted] = useState<boolean>(false);
 
   // Load client localStorage and session after hydration
   useEffect(() => {
-    setIsClientMounted(true);
-    try {
-      const saved = localStorage.getItem(BOOKMARK_STORAGE_KEY);
-      if (saved) {
-        setBookmarkedIds(JSON.parse(saved));
+    const frameId = window.requestAnimationFrame(() => {
+      try {
+        const saved = localStorage.getItem(BOOKMARK_STORAGE_KEY);
+        if (saved) {
+          setBookmarkedIds(JSON.parse(saved));
+        }
+      } catch (e) {
+        console.error('Failed to parse bookmarks:', e);
       }
-    } catch (e) {
-      console.error('Failed to parse bookmarks:', e);
-    }
 
-    const session = getAdminSession();
-    if (session) {
-      setIsAdmin(true);
-    }
+      const session = getAdminSession();
+      if (session) {
+        setIsAdmin(true);
+      }
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
   }, []);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -334,7 +336,7 @@ function DamaraApp() {
   return (
     <div className="relative min-h-screen flex flex-col justify-between">
       {/* Main Container */}
-      <div className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8">
         {/* View Mode: Job Form (Mockup 3) OR Job List (Mockup 1 & 2) */}
         {isFormOpen ? (
           <div className="py-8 sm:py-12">
@@ -357,7 +359,7 @@ function DamaraApp() {
               onOpenAdminLogin={() => setIsAuthModalOpen(true)}
             />
 
-            <div className="space-y-6 pb-16">
+            <div className="space-y-5 pb-12 sm:pb-16">
               {/* Search Bar & Filters: Admin mode vs Public mode */}
               {isAdmin ? (
                 <div className="px-2">
@@ -407,7 +409,7 @@ function DamaraApp() {
 
               {/* Section Header: "Daftar Lowongan" & "+ Tambah" (Mockup 2) */}
               <div className="flex items-center justify-between px-2 pt-2">
-                <h2 className="font-heading font-bold text-lg sm:text-xl text-[#FAFAFA] tracking-tight">
+                <h2 className="font-heading font-bold text-base sm:text-xl text-[#fffaf0] tracking-tight">
                   {selectedProdi === 'saved' ? 'Lowongan Tersimpan' : 'Daftar Lowongan'}
                 </h2>
 
@@ -463,7 +465,7 @@ function DamaraApp() {
               ) : (
                 <>
                   {/* Job Cards Responsive Grid: Mobile 1 col, Tablet 2 col, Desktop 3 col */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                     {paginatedVacancies.map((job) => (
                       <JobCard
                         key={job.id}
@@ -525,35 +527,35 @@ function DamaraApp() {
             </div>
           </>
         )}
-      </div>
+      </main>
 
       {/* Footer Branding Kabinet Mandala FTMM UNAIR (Hidden when adding/editing jobs) */}
       {!isFormOpen && (
-        <footer className="w-full border-t border-white/10 bg-[#351E0E]/80 backdrop-blur-xl mt-auto py-8 text-stone-200">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <footer className="w-full sm:hidden border-t border-amber-100/10 bg-[#6b421e]/90 backdrop-blur-xl mt-auto py-8 text-stone-200">
+          <div className="mx-auto max-w-md px-5 space-y-6">
             {/* Kabinet Mandala Official Logo, Info & Kontak */}
             <div className="flex flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
               {/* Logo & Address */}
-              <div className="space-y-1.5 sm:space-y-2 max-w-[55%] sm:max-w-none">
+              <div className="space-y-1.5 max-w-[62%]">
                 <div className="inline-block">
                   <Image
                     src="/logo-mandala.png"
                     alt="Logo Kabinet Mandala BEM FTMM UNAIR — Makna, Daya, Laksana"
                     width={260}
                     height={82}
-                    className="h-10 sm:h-14 w-auto object-contain select-none"
+                    className="h-11 w-auto object-contain select-none"
                     priority
                   />
                 </div>
-                <p className="text-[11px] sm:text-xs text-stone-300/80 font-normal leading-tight">
-                  Gedung Nano, Kampus C UNAIR, Kota Surabaya
+                <p className="text-[10px] text-stone-200/80 font-normal leading-relaxed">
+                  Gedung Kuliah Bersama, Jl. Dr. Ir. H. Soekarno Kampus C, Mulyorejo, Surabaya
                 </p>
               </div>
 
               {/* Kontak Section (Positioned beside logo on mobile, right-aligned on desktop) */}
-              <div className="space-y-1.5 sm:space-y-2 shrink-0">
-                <h5 className="font-bold text-[11px] sm:text-xs text-[#FAFAFA] tracking-wide uppercase">Kontak</h5>
-                <div className="space-y-1.5 text-[11px] sm:text-xs text-stone-300/80">
+              <div className="space-y-2 shrink-0">
+                <h5 className="font-bold text-[10px] text-[#FAFAFA] tracking-wide uppercase">Media Sosial</h5>
+                <div className="space-y-1.5 text-[10px] text-stone-200/80">
                   <div className="flex items-center gap-2">
                     <Phone className="w-3.5 h-3.5 text-[#D9B26A] shrink-0" />
                     <a
@@ -580,7 +582,7 @@ function DamaraApp() {
               </div>
             </div>
 
-            <div className="pt-4 border-t border-white/5 text-[11px] text-stone-400 text-center sm:text-left">
+            <div className="pt-4 border-t border-white/10 text-[10px] text-stone-300/75 text-center">
               &copy; {new Date().getFullYear()} DAMARA (Daya Magang Industri Mandala) &bull; BEM FTMM Universitas Airlangga
             </div>
           </div>

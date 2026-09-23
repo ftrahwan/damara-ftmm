@@ -57,13 +57,13 @@ export function JobCard({
 
   return (
     <article
-      className={`relative glass-card rounded-3xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 ${
+      className={`relative glass-card rounded-xl p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 ${
         !job.is_active ? 'opacity-70 border-dashed border-stone-500/50' : ''
       }`}
     >
       <div>
         {/* Top Row: Prodi Badges & Actions */}
-        <div className="flex items-start justify-between gap-2 mb-3">
+        <div className="flex items-start justify-between gap-2 mb-3.5">
           <div className="flex flex-wrap items-center gap-1.5">
             {job.prodi_tags && job.prodi_tags.length > 0 ? (
               job.prodi_tags.map((tag) => {
@@ -72,7 +72,7 @@ export function JobCard({
                   <span
                     key={tag}
                     style={{ backgroundColor: style.bgHex, color: style.textColor }}
-                    className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold shadow-xs tracking-wide"
+                    className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold shadow-xs tracking-wide"
                   >
                     {tag}
                   </span>
@@ -184,12 +184,12 @@ export function JobCard({
         </div>
 
         {/* Job Title */}
-        <h3 className="font-heading font-bold text-lg sm:text-xl text-[#FAFAFA] leading-snug tracking-tight mb-2">
+        <h3 className="font-heading font-bold text-lg sm:text-xl text-[#fffaf0] leading-snug tracking-tight mb-2">
           {job.title}
         </h3>
 
         {/* Company & Location Metadata */}
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-stone-300/80 mb-3">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-stone-200/80 mb-3">
           <div className="flex items-center gap-1.5 font-medium">
             <Building2 className="w-3.5 h-3.5 text-[#D9B26A]" />
             <span>{job.company}</span>
@@ -204,15 +204,15 @@ export function JobCard({
 
         {/* Description */}
         {job.description && (
-          <p className="text-xs leading-relaxed text-stone-300/80 line-clamp-3 mb-4 font-light">
+          <p className="text-[11px] leading-relaxed text-stone-200/75 line-clamp-3 mb-4 font-normal">
             {job.description}
           </p>
         )}
       </div>
 
       {/* Card Footer: Date & "Lebih Lengkap ↗" Button */}
-      <div className="pt-3 border-t border-white/10 flex items-center justify-between gap-3 mt-2">
-        <span className="text-[11px] font-medium text-stone-400">
+      <div className="pt-3 border-t border-amber-100/10 flex items-center justify-between gap-3 mt-2">
+        <span className="text-[10px] font-medium text-stone-300/75">
           {formattedDate}
         </span>
 
@@ -220,7 +220,7 @@ export function JobCard({
           href={job.source_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full glass-btn-primary text-xs font-bold text-white shadow-md cursor-pointer transition-all hover:scale-105 active:scale-95"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg glass-btn-primary text-[11px] font-bold shadow-md cursor-pointer transition-all hover:scale-105 active:scale-95"
         >
           <span>Lebih Lengkap</span>
           <ExternalLink className="w-3.5 h-3.5" />

@@ -16,10 +16,10 @@ export function SearchBar({
 }: SearchBarProps) {
   return (
     <div className="relative w-full max-w-2xl mx-auto">
-      <div className="relative flex items-center h-12 bg-[#9E6935] hover:bg-[#A8723C] focus-within:bg-[#A8723C] rounded-full border border-[#D9B26A]/25 shadow-md transition-all">
+      <div className="relative flex items-center h-11 bg-[#9e6935]/90 hover:bg-[#a8723c] focus-within:bg-[#a8723c] rounded-full border border-[#f0c978]/25 shadow-[inset_0_1px_0_rgba(255,245,220,0.12)] transition-all">
         {/* Search Icon */}
         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-5 text-[#DEBE7E]">
-          <Search className="h-5 w-5" />
+          <Search className="h-4 w-4" />
         </div>
 
         {/* Capsule Input Field */}
@@ -28,7 +28,7 @@ export function SearchBar({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="w-full bg-transparent py-3 pl-12 pr-10 text-sm font-semibold text-[#FAFAFA] placeholder:text-[#DEBE7E] focus:outline-none"
+          className="w-full bg-transparent py-3 pl-11 pr-10 text-sm font-medium text-[#FAFAFA] placeholder:text-[#e5c486] focus:outline-none"
         />
 
         {/* Clear Button */}
