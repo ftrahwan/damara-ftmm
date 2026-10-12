@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { LogOut, LayoutDashboard } from 'lucide-react';
 import { DamaraLogo } from '@/components/ui/DamaraLogo';
 
@@ -41,8 +42,16 @@ export function HeroSection({
       )}
 
       {/* Main Branding Logo: DAMARA */}
-      <div className="flex justify-center items-center px-4">
+      <div className="flex flex-col items-center justify-center gap-3 px-4">
         <h1 className="sr-only">DAMARA</h1>
+        <Image
+          src="/logo-format.png"
+          alt="Universitas Airlangga, FTMM, dan BEM FTMM"
+          width={664}
+          height={128}
+          priority
+          className="h-8 w-auto select-none sm:h-10"
+        />
         <DamaraLogo className="w-full max-w-[320px] sm:max-w-[440px] md:max-w-[520px] h-auto select-none" />
       </div>
 
