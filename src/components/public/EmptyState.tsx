@@ -10,7 +10,7 @@ interface EmptyStateProps {
 
 export function EmptyState({
   onReset,
-  message = 'Tidak ada lowongan yang sesuai. Coba ubah kata kunci atau filter prodi.',
+  message = 'Mohon maaf, data yang Anda cari tidak ditemukan. Silakan coba kata kunci lain atau atur ulang pencarian.',
 }: EmptyStateProps) {
   return (
     <div className="flex flex-col items-center justify-center py-12 sm:py-16 text-center max-w-md mx-auto animate-in fade-in duration-300 px-4">
@@ -21,7 +21,7 @@ export function EmptyState({
 
       {/* Heading */}
       <h3 className="mb-2 font-heading text-lg sm:text-xl font-bold text-[#FAFAFA]">
-        Hasil Pencarian Nihil
+        Data Tidak Ditemukan
       </h3>
 
       {/* Message */}

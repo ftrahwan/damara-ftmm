@@ -8,6 +8,13 @@ import {
 import { FTMM_PRODI_LIST, INITIAL_MOCK_VACANCIES } from './mock-data';
 
 const LOCAL_STORAGE_KEY = 'damara_vacancies_data';
+const MAX_PRODI_TAGS = 2;
+
+function validateProdiTags(prodiTags: string[]): void {
+  if (prodiTags.length > MAX_PRODI_TAGS) {
+    throw new Error(`Lowongan hanya dapat memiliki maksimal ${MAX_PRODI_TAGS} program.`);
+  }
+}
 
 // Helper for local mock storage in browser
 function getLocalVacancies(): Vacancy[] {
@@ -82,6 +89,7 @@ export async function getPublicVacancies(params: FilterParams = {}): Promise<Vac
         .from('vacancies')
         .select('*')
         .eq('is_active', true)
+        .eq('vacancy_status', 'active')
         .order('created_at', { ascending: false });
 
       if (searchQuery.trim()) {
@@ -95,16 +103,20 @@ export async function getPublicVacancies(params: FilterParams = {}): Promise<Vac
 
       const { data, error } = await query;
 
-      if (!error && data) {
-        return data as Vacancy[];
-      }
+      if (error) throw error;
+      if (data) return data as Vacancy[];
     } catch (e) {
       console.warn('Supabase query failed, falling back to local dataset:', e);
+      if (process.env.NODE_ENV === 'production') throw e;
     }
+  } else if (process.env.NODE_ENV === 'production') {
+    throw new Error('Supabase is not configured; refusing to show cached vacancy data.');
   }
 
-  // Fallback Local Filtering (Matching Supabase SQL behavior)
-  let items = getLocalVacancies().filter((v) => v.is_active);
+  // Development-only fallback; unknown and closed rows are not public listings.
+  let items = getLocalVacancies().filter(
+    (v) => v.is_active && (!v.vacancy_status || v.vacancy_status === 'active')
+  );
 
   if (searchQuery.trim()) {
     const q = searchQuery.toLowerCase().trim();
@@ -183,6 +195,7 @@ export async function getVacancyById(id: string): Promise<Vacancy | null> {
  * Create a new Vacancy
  */
 export async function createVacancy(formData: VacancyFormData): Promise<Vacancy> {
+  validateProdiTags(formData.prodi_tags);
   const supabase = createClient();
 
   if (supabase) {
@@ -238,6 +251,7 @@ export async function createVacancy(formData: VacancyFormData): Promise<Vacancy>
  * Update an existing Vacancy
  */
 export async function updateVacancy(id: string, formData: VacancyFormData): Promise<Vacancy> {
+  validateProdiTags(formData.prodi_tags);
   const supabase = createClient();
 
   if (supabase) {
